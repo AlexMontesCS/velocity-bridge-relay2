@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "velocity-bridge-relay2",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-13",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "VELOCITY_RELAY",
+        "class_name": "VelocityRelayPair"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["VelocityRelayPair"]
+    }
+  ],
+  "vars": {
+    "MESSAGE_TTL_SECONDS": "86400"
+  }
+}

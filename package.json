@@ -1,0 +1,24 @@
+{
+  "name": "velocity-bridge-relay2",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Worker relay for Velocity Bridge with Durable Objects and SSE",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  },
+  "cloudflare": {
+    "bindings": {
+      "VELOCITY_RELAY": {
+        "description": "Durable Object namespace used to store per-pair Velocity Bridge messages and live SSE subscribers."
+      }
+    }
+  }
+}
